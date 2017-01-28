@@ -40,6 +40,9 @@ module RSpec
 
       # @private
       class MustBeConfiguredBeforeExampleGroupsError < StandardError; end
+      
+      # - parallel
+      attr_accessor :thread_maximum
 
       # @private
       def self.define_reader(name)
@@ -412,6 +415,8 @@ module RSpec
       # rubocop:disable Metrics/AbcSize
       # rubocop:disable Metrics/MethodLength
       def initialize
+        # - parallel
+        @thread_maximum = 1
         # rubocop:disable Style/GlobalVars
         @start_time = $_rspec_core_load_started_at || ::RSpec::Core::Time.now
         # rubocop:enable Style/GlobalVars
