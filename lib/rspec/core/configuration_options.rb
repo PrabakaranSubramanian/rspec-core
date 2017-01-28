@@ -57,7 +57,7 @@ module RSpec
 
       UNFORCED_OPTIONS = Set.new([
         :requires, :profile, :drb, :libs, :files_or_directories_to_run,
-        :full_description, :full_backtrace, :tty
+        :full_description, :full_backtrace, :tty, :thread_maximum
       ])
 
       UNPROCESSABLE_OPTIONS = Set.new([:formatters])
