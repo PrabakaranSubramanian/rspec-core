@@ -350,6 +350,7 @@ module RSpec
       attr_reader :backtrace_formatter, :ordering_manager, :loaded_spec_files
 
       def initialize
+        @thread_maximum = 1
         # rubocop:disable Style/GlobalVars
         @start_time = $_rspec_core_load_started_at || ::RSpec::Core::Time.now
         # rubocop:enable Style/GlobalVars
